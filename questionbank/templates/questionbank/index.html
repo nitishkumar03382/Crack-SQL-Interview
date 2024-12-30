@@ -1,0 +1,68 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<!-- Link to style.css -->
+<link rel="stylesheet" type="text/css" href="{% static 'questionbank/style.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+
+</script>
+<body class="bg-dark text-light">
+<div class="container">
+
+
+<div class="top-form d-flex justify-content-center align-items-center">
+    <!-- Search form -->
+    <form method="get" action="" class="form-inline">
+        <input type="text" class="form-control mr-sm-2" id="search-box" name="search" placeholder="Search questions..." value="{{ search_query }}">
+        <input type="hidden" name="filter" value="{{ filter_type }}"> <!-- Preserve current filter -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+<div class="top-form d-flex justify-content-center align-items-center">
+    <form method="get" action = "" class="form-inline">
+        <label>
+            <input class="form-check" type="radio" name = "filter" value="all" {% if filter_type == 'all' %}checked{% endif %}>
+            All
+        </label>
+        <label>
+            <input class="form-check" type="radio" name = "filter" value="unsolved" {% if filter_type == 'unsolved' %}checked{% endif %}>
+            Unsolved
+        </label>
+        <label>
+            <input class="form-check" type="radio" name = "filter" value="solved" {% if filter_type == 'solved' %}checked{% endif %}>
+            Solved
+        </label>
+        <button type = "submit"><i class="fa-solid fa-filter"></i></button>
+    </form>
+</div>
+</div>
+<hr>
+<!-- <h3>{{filter_type}}</h3> -->
+<table class="table table-dark table-striped table-bordered table-hover">
+    <tr>
+        <th class="w-5"></th>
+        <th class="w-75">Question</th>
+        <th class="w-10">Problem</th>
+        <th class="w-10">Solution</th>
+    </tr>
+{% for question in questions %}
+    <tr class="question-row">
+    <form method="get" action="" class="form-inline">
+        <input type="hidden" name="filter" value="{{ filter_type }}">
+        <input type="hidden" name="toggle" value="{{question.id}}">
+       <td class="w-5"> <button class="mark-as-done"><i class="fa-solid fa-check"></i></i></button></td>
+    </form>
+      <td class="w-75">  {{question.title}}</td>
+      <td class="w-10">  <a href = "https://{{question.doc_link}}">
+        <img src="{% static "questionbank/images/hackerrank_logo.png" %}" alt="hr" class="link-img">
+      </a> </td>
+        <td class="w-10"><a href = "https://{{question.sol_link}}"><i class="fa-brands fa-github"></i></a></td>
+    </tr>
+    
+{% endfor %}
+</table>
+
+</body>
+{% endblock content %}
