@@ -8,7 +8,7 @@ class Question(models.Model):
         ('Medium', 'Medium'),
         ('Hard', 'Hard')
     ]
-    title = models.CharField(max_length=300)
+    title = models.CharField(max_length=300, unique=True)
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
     category = models.CharField(max_length=100)
     doc_link = models.CharField(max_length=1000)
@@ -33,4 +33,5 @@ class UserQuestionStatus(models.Model):
 class UserSolvedQuestion(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE) 
+    updated_at = models.DateTimeField(auto_now=True)
 

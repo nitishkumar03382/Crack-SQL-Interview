@@ -52,13 +52,19 @@
     <form method="get" action="" class="form-inline">
         <input type="hidden" name="filter" value="{{ filter_type }}">
         <input type="hidden" name="toggle" value="{{question.id}}">
-       <td class="w-5"> <button class="mark-as-done"><i class="fa-solid fa-check"></i></i></button></td>
+        {% if question in solved_questions %}
+            <td class="w-5"> <button class="mark-as-undone"><i class="fa-solid fa-check"></i></i></button></td>
+        {% else %}
+            <td class="w-5"> <button class="mark-as-done"><i class="fa-solid fa-check"></i></i></button></td>
+        {% endif %}
+        
+       
     </form>
       <td class="w-75">  {{question.title}}</td>
-      <td class="w-10">  <a href = "https://{{question.doc_link}}">
+      <td class="w-10">  <a href = "https://{{question.doc_link}}" target="_blank">
         <img src="{% static "questionbank/images/hackerrank_logo.png" %}" alt="hr" class="link-img">
       </a> </td>
-        <td class="w-10"><a href = "https://{{question.sol_link}}"><i class="fa-brands fa-github"></i></a></td>
+        <td class="w-10"><a href = "https://{{question.sol_link}}" target="_blank"><i class="fa-brands fa-github"></i></a></td>
     </tr>
     
 {% endfor %}

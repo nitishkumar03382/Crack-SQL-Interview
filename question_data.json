@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Cities with even ID",
+        "difficulty": "Easy",
+        "category": "where,distinct,order by",
+        "doc_link": "www.hackerrank.com/challenges/weather-observation-station-3/problem",
+        "sol_link": "github.com"
+    },
+    {
+        "title": "Type of Triangle",
+        "difficulty": "Easy",
+        "category": "case when, conditonal",
+        "doc_link": "www.hackerrank.com/challenges/what-type-of-triangle/problem",
+        "sol_link": "github.com"
+    }
+]
