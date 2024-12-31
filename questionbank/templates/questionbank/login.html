@@ -2,22 +2,87 @@
 {% load static %}
 
 {% block content %}
-  <link rel="stylesheet" type="text/css" href="{% static 'questionbank/style.css' %}">
-  <form action="" method="post" class="form-group login-form">
+<style>
+    body{
+        background-image: url("{% static 'questionbank/images/login_bg.jpg' %}");
+        /* filter: blur(5px); */
+    }
+    .login-container {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+            background: #022227;
+            padding: 30px;
+            border: 1px solid whitesmoke;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #e6e4eb;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 10px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .login-container button {
+            width: 40%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-container .signup-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .login-container .signup-link:hover {
+            text-decoration: underline;
+        }
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'questionbank/style.css' %}">
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form action="" method="post" >
     {% csrf_token %}
-<div class="form-row">
-
-    <div class="col">
-
-    </div>
-    <label for="username">Username:</label>
-    <input type="text" placeholder="Username" name="username" class="form-control">
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="login-password" placeholder="Password" class="form-control">
-    <button type="submit" class="form-control btn">Login</button>
-</div>
+        <input type="text" placeholder="Username" name="username" >
+        <input type="password" name="password" id="login-password" placeholder="Password" >
+        <button type="submit">Login</button>
+    
   </form>
-<a href="{% url 'signup' %}">Sign Up</a>
+  <br>
+  <span>Don`t have an account?</span>
+  <a href="{% url 'signup' %}" class="signup-link">Sign Up</a>
+</div>
+
 {% if messages %}
     <div class="container mt-3">
         {% for message in messages %}
