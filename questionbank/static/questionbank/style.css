@@ -105,37 +105,43 @@ body{
 }
 
 .link-img{
-    width: 50px;
-    height: 35px;
+    width: 40px;
+    height: 25px;
 }
 /* LOGIN PAGE */
 .login-container {
-    background: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    background: #595859;
     padding: 30px;
+    border: 1px solid #70ad46;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px;
     text-align: center;
+    color: #fff;
 }
 
 .login-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #e6e4eb;
 }
 
 .login-container input[type="text"],
 .login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    margin: 10px;
+    text-align: center;
+    padding: 5px;
 }
 
 .login-container button {
-    width: 100%;
+    width: 40%;
     padding: 10px;
     margin-top: 10px;
     background-color: #007BFF;
@@ -160,7 +166,4 @@ body{
 
 .login-container .signup-link:hover {
     text-decoration: underline;
-}
-main{
-    background-image: 'images/login_bg.png';
 }

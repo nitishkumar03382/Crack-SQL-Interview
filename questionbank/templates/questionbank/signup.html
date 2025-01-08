@@ -1,13 +1,25 @@
-{% extends "main.html" %}
 {% load static %}
 
 {% block content %}
+<style>
+    body{
+        background-image: url("{% static 'questionbank/images/login_bg.jpg' %}");
+        /* filter: blur(5px); */
+    }
+    
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'questionbank/style.css' %}">
+<div class="login-container">
+<h2>Data-Yatra</h2>
 <form action="" method="post">
     {% csrf_token %}
-    <label for="username">Username:</label>
     <input type="text" placeholder="Username" name="username">
     <input type="password" placeholder="Password" name="password">
     <input type="password" placeholder="Password Again" name="password_again">
     <button type="submit">Sign Up</button>
 </form>
+<span>Already have an account?</span>
+  <a href="{% url 'login' %}" class="signup-link">Login</a>
+</div>
 {% endblock content %}

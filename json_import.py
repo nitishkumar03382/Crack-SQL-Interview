@@ -1,6 +1,8 @@
 import json
 from questionbank.models import Question  # Replace `myapp` with your app name
-
+# To run this file
+# 1. python manage.py shell
+# 2. >>> exec(open('json_import.py').read())
 with open('question_data.json') as file:
     data = json.load(file)
     for item in data:

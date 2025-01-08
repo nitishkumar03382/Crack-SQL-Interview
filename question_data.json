@@ -4,13 +4,27 @@
         "difficulty": "Easy",
         "category": "where,distinct,order by",
         "doc_link": "www.hackerrank.com/challenges/weather-observation-station-3/problem",
-        "sol_link": "github.com"
+        "sol_link": "www.hackerrank.com/challenges/weather-observation-station-3/forum"
     },
     {
         "title": "Type of Triangle",
         "difficulty": "Easy",
         "category": "case when, conditonal",
         "doc_link": "www.hackerrank.com/challenges/what-type-of-triangle/problem",
-        "sol_link": "github.com"
+        "sol_link": "www.hackerrank.com/challenges/what-type-of-triangle/forum"
+    },
+    {
+        "title": "User Purchase Platform",
+        "difficulty": "Hard",
+        "category": "cte, union, group by",
+        "doc_link": "github.com/nitishkumar03382/SQL-Interview/blob/main/SQL%20Complex%20Interview%20Questions/user_purchase_platform.txt",
+        "sol_link": "github.com/nitishkumar03382/SQL-Interview/blob/main/SQL%20Complex%20Interview%20Questions/user_purchase_platform_solution.sql"
+    },
+    {
+        "title": "Trips and Users",
+        "difficulty": "Hard",
+        "category":"case when, join, group by",
+        "doc_link":"leetcode.com/problems/trips-and-users/",
+        "sol_link":"leetcode.com/problems/trips-and-users/solutions/6250668/joins-group-by-case-when-by-nitishkumar0-2n0a/"
     }
 ]

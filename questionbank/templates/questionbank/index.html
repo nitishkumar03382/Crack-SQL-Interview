@@ -10,10 +10,14 @@
 </script>
 <body class="bg-dark text-light">
 <div class="container">
-
+<div style="text-align: center;">
+    <h1 >Data-Yatra</h1>
+    <span>Where Your Data Journey Begins...</span>
+</div >
 
 <div class="top-form d-flex justify-content-center align-items-center">
     <!-- Search form -->
+    
     <form method="get" action="" class="form-inline">
         <input type="text" class="form-control mr-sm-2" id="search-box" name="search" placeholder="Search questions..." value="{{ search_query }}">
         <input type="hidden" name="filter" value="{{ filter_type }}"> <!-- Preserve current filter -->
@@ -62,9 +66,11 @@
     </form>
       <td class="w-75">  {{question.title}}</td>
       <td class="w-10">  <a href = "https://{{question.doc_link}}" target="_blank">
-        <img src="{% static "questionbank/images/hackerrank_logo.png" %}" alt="hr" class="link-img">
+        <img src="{% static "questionbank/images/problem_logo.png" %}" alt="hr" class="link-img">
       </a> </td>
-        <td class="w-10"><a href = "https://{{question.sol_link}}" target="_blank"><i class="fa-brands fa-github"></i></a></td>
+        <td class="w-10"><a href = "https://{{question.sol_link}}" target="_blank">
+            <img src="{% static "questionbank/images/solution_logo.png" %}" alt="hr" class="link-img">
+        </a></td>
     </tr>
     
 {% endfor %}
